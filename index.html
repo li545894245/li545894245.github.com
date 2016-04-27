@@ -10,11 +10,27 @@
 <script src="js/move8.js"></script>
 
 <script>
+window.onload=window.onresize=window.onscroll=function(){
+	
+var oTxt=document.getElementById('text');
+	var oTxt_l=document.getElementById('text_l');
+	var oTxt_r=document.getElementById('text_r');
+	var sT=document.documentElement.scrollTop||document.body.scrollTop;
+	var Ch=document.documentElement.clientHeight;
+	var oT=oTxt.offsetTop;
+	
+	if(sT+Ch>=oT){
+	move(oTxt_l,{opacity:1},{duration:1000,complete:function(){
+		move(oTxt_r,{opacity:1},{duration:1500});
+	}});
+	}
+};
 
 </script>
 <title>Ken web site</title>
 </head>
 <body>
+	<div id="load"><img src="img/1.gif"></div>
 	<div class="header clearFix w">
 		<h1 class="header_logo fl"><a href="index.html" class="log_in">Sites</a></h1>
         <div class="header_right fr clearFix">
@@ -59,11 +75,19 @@
         </ul>
    
    </div>
-   
- 	
-
- 
-
+   	<div class="data clearFix w"id="text">
+    	<h3>ABOUT</h3>
+        <div class="f">Feel free to contact me</div>
+        <div class="data_l" id="text_l">
+        	<p>姓名：李瑞鑫</p>
+            <p>性别：男</p>
+            <p>出生日期：1993</p>
+            <p>地址：北京海淀区</p>
+            <p>E-MAIL: 18801132845@sina.cn</p>
+        </div>
+        <div class="data_r" id="text_r"></div>
+    </div>
+   	
 
 <script src="js/bz.js"></script>
 

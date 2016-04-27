@@ -1,3 +1,21 @@
+(function(){
+	var iNow=0;
+	var timer;
+	var oLoad=document.getElementById('load');
+	var oLoad_img=oLoad.getElementsByTagName('img')[0];
+	timer=setInterval(function(){
+		iNow++;
+		if(iNow==10){
+		move(oLoad,{opacity:0});
+		}else if(iNow==16){
+			oLoad.style.display='none';
+			/*oLoad_img.parentNode.removeChild(oLoad);*///
+			clearInterval(timer);
+			
+		}
+	},200);
+	
+})();
 var na=window.navigator.userAgent;
 var re=/chrome/gi;
 if(!re.test(na))
@@ -111,8 +129,6 @@ function createList(){
 			var dir = hoverDir(obj,oEvent);
 			
 			//上 3 右 0 下 1 左2
-			console.log(dir);
-			
 			switch(dir){
 				case 0:
 					oS.style.left = '484px';
@@ -169,6 +185,4 @@ function createList(){
 		
 	}
 })();
-
-
 }

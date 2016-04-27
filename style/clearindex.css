@@ -6,8 +6,8 @@ em,i{font-style:normal }
 b,strong{font-weight:normal;}
 input{outline:none;border:none;}
 a img{border:none;}
-img{ display:block;}
-body{ background:url(../img/bj.jpg) no-repeat #0c1114;font-family:'Metamorphous', cursive;}
+
+body{ background:url(../img/bj.jpg) no-repeat #0c1114;font-family:'Metamorphous', cursive; }
 .fl{float:left;}
 .fr{float:right; }
 .clearFix:after{ content:''; display:block; clear:both; }
