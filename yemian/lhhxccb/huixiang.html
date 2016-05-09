@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/css.css"rel="stylesheet">
+<link href="css/qing.css"rel="stylesheet">
+<script>
+
+window.onload=function(){
+		var oBtn1=document.getElementById('shang')
+		var oBtn2=document.getElementById('xia')
+		var oBtn3=document.getElementById('xia2')
+		
+      function show(a,b){
+		  	var aBtn=a.getElementsByTagName('a')
+			var aUl=a.getElementsByTagName('ul')
+			alert(aBtn.length);
+			for(i=0;i<aBtn.length;i++){
+				aBtn[i].index=i;
+				aBtn[i][b]=function(){
+					for(i=0;i<aBtn.length;i++){
+						aBtn[i].className='';
+						aUl[i].className='center_a';	
+					}
+					this.className='active';
+					aUl[this.index].className='show center_a';
+					
+				}
+				
+				}
+		  }
+		  show(oBtn1,'onmouseover');
+		  show(oBtn2,'onclick');
+		  show(oBtn3,'onmouseover');
+		  
+			  var oDiv=document.getElementById('box');
+			  var aA=oDiv.getElementsByTagName('a');
+			  var aSpan=oDiv.getElementsByTagName('span');
+			  	for(i=0;i<aSpan.length;i++){
+					aSpan[i].index=i;
+					aSpan[i].onmouseover=function(){
+						for(var i=0;i<aSpan.length;i++){
+							aSpan[i].className='';
+							aA[i].className='';
+						}
+						this.className='active';
+						aA[this.index].className='show';
+					}
+				}
+				var oDiv1=document.getElementById('column_r')
+				var aLi1=oDiv1.getElementsByTagName('li')
+				var aDiv_a=oDiv1.getElementsByTagName('div')
+				 for(i=0;i<aLi1.length;i++){
+					 aLi1[i].index=i;
+				 	aLi1[i].onmouseover=function(){
+						for(i=0;i<aLi1.length;i++){
+							aLi1[i].className='';
+							aDiv_a[i].className='news';
+							
+						}
+						this.className='active';
+						aDiv_a[this.index].className='show news ';
+					}
+				 }
+				 var oDiv2=document.getElementById('content_in');
+				 var aLi=oDiv2.getElementsByTagName('li');
+				 var aA1=oDiv2.getElementsByTagName('a');
+				
+				 	for(i=0;i<aLi.length;i++){
+						aLi[i].index=i;
+						aLi[i].onmouseover=function(){
+							for(i=0;i<aLi.length;i++){
+								aLi[i].className='';
+								aA1[i].className='';
+							}
+							this.className='active'; 
+							aA1[this.index].className='show';
+						}
+					}
+}
+			  	
+			
+
+</script>
+</head>
+
+
+<body>
+<div class="top">
+	<div class="nav clearFix">
+    <h1 class="fl logo"><a href="javascript:;">畅游</a></h1>
+    <ul class="nav_a fr">
+    	<li><i></i><a href="javascript:;">注册</a></li>
+        <li class="b1"><i></i><a href="javascript:;">充值</a></li>
+        <li class="b2 "><i></i><a href="javascript:;">畅游+</a></li>
+       <li class="bor"><a href="javascript:;">客服</a><b></b></li>
+        <li class="bor"><a href="javascript:;">畅游全服</a><b></b></li>
+         <li class="bor"><a href="javascript:;"> 畅游全游戏</a><b></b></li>
+        
+    </ul>
+    	
+    
+    
+    </div>
+
+
+</div>
+<div class="tiao"></div>
+	<div class="hot_a clearFix">
+		<div class="hot clearFix">
+ <a href="javascript:;" class="fl tu1"><img src="images/logo.gif" /></a>
+ <ul class=" nav_h fr clearFix">
+ <li><a href="javascript:;">首页</a><p>HOME</p></li>
+ <li class="li3"><a href="javascript:;">新闻公告</a><p>NEWS</p></li>
+   <li><a href="javascript:;">游戏特色</a><p>FEATURES</p></li>
+    <li><a href="javascript:;">新手指南</a><p>NEWBIE</p></li>
+     <li><a href="javascript:;">游戏下载</a><p>DOWNLOAO</p></li>
+      <li><a href="javascript:;">活动专区</a><p>ACTIVTY</p></li><li class="li2"><a href="javascript:;">视觉欣赏</a><p>VIDEO&PICTURE</p></li>
+        <li><a href="javascript:;">玩家互动</a><p>INTERACTION</p></li>
+         <li class="li1"><a href="javascript:;">客户服务</a><p>SERVICE</p></li>
+ 
+  
+       
+ </ul>
+ <div class="dingwei"><a href="javascript:;"><img src="images/4.png" /></a></div>
+
+
+</div>
+		<div class="bar clearFix">
+        <div class="bar_a fl"></div>
+        <div class="bar_b fl">
+        <p> <a href="javascript:;">电信一区 <b>【元素殿堂】</b>欢迎进驻！</a></p>
+        <p> <a href="javascript:;">电信一区 <b>【元素殿堂】</b>欢迎进驻！</a></p>
+        
+        
+        </div>
+        <div class="bar_c fl clearFix">
+        	<p class="fl"> 距离上次访问有<a href="javascript:;">200</a>条更新<i></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注：</p>
+        
+        </div>
+        <div class="fl column" id="box">
+        <a href="javascript:;" class="show"><img src="images/main_a1.jpg" alt="1"/></a>
+        <a href="javascript:;" class=""><img src="images/1.jpg" alt="1"/></a>
+        <a href="javascript:;" class=""><img src="images/1.jpg" alt="1"/></a>
+        <a href="javascript:;" class=""><img src="images/56.jpg" alt=/></a>
+        <a href="javascript:;" class=""><img src="images/56.jpg" alt="1"/></a>
+        <div class=" column_btn">
+        <span class="active"></span>
+         <span></span>
+          <span></span>
+           <span></span>
+            <span></span>
+        
+        </div>
+        
+        </div>
+        <div class="fl column_r" id="column_r">
+        	<ul class="top_in">
+            	<li class=" active"><a href="javascript:;">综合</a></li>
+                <li><a href="javascript:;">新闻</a></li>
+                <li><a href="javascript:;">公告</a></li>
+                <li><a href="javascript:;">媒体</a></li>
+              
+            </ul>
+            <div class="news show">
+            <h3><a href="javascript:;">4月8日大阪开启 新职业术士魔神天降</a></h3>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            
+            <p class="btn fr"><i></i><a href="javascript:;">更多信息</a></p>
+            </div>
+            <div class="news">
+            <h3><a href="javascript:;">4月9日大阪开启 新职业术士魔神天降</a></h3>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            
+            <p class="btn fr"><i></i><a href="javascript:;">更多信息</a></p>
+            </div>
+        	<div class="news">
+            <h3><a href="javascript:;">4月10日大阪开启 新职业术士魔神天降</a></h3>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            
+            <p class="btn fr"><i></i><a href="javascript:;">更多信息</a></p>
+            </div>
+       		<div class="news">
+            <h3><a href="javascript:;">4月12日大阪开启 新职业术士魔神天降</a></h3>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            <p><a href="javascript:;">【新闻】决战开启！6月4日全新Raid本“暗黑城</a>&nbsp;&nbsp;&nbsp;02/24</p>
+            
+            <p class="btn fr"><i></i><a href="javascript:;">更多信息</a></p>
+            </div>
+        
+        </div>
+        
+        
+        
+        
+        </div>
+        <div class="banner clearFix">
+        <a href="javascript:;"><img src="images/main_a2 (1).jpg" /> </a>
+        <a href="javascript:;"><img src="images/main_a2 (2).jpg" /> </a>
+        <a href="javascript:;"><img src="images/main_a2 (3).jpg" /> </a>
+        <a href="javascript:;" class="tu2"><img src="images/main_a2.jpg" /> </a>
+        </div>
+        <div class="content clearFix ">
+         <div class="content_in clearFix fl" id="content_in">
+        	<ul class="fl clearFix">
+            <li class="active">神射手</li>
+            <li>战士</li>
+            <li>守护者</li>
+            <li>魔法师</li>
+            <li>刺客</li>
+            </ul>
+            <div class="content_a">
+            <a href="javascript:;" class="show"><img src="images/zhanshi.jpg" /></a>
+            <a href="javascript:;"><img src="images/1.jpg" /></a>
+            <a href="javascript:;"><img src="images/main_a1.jpg" /></a>
+            <a href="javascript:;"><img src="images/56.jpg" /></a>
+            <a href="javascript:;"><img src="images/234.jpg" /></a>
+            </div>
+            </div>
+         <div class="fr content_b">
+         <h3><i></i>活动中心</h3>
+         <div class="content_c">
+         	<a href="javascript:;"><img src="images/234.jpg" /></a>
+         	<div class="bg">
+            <p>女武神的密保</p>
+         
+        	</div>
+         </div>
+         <div class=" content_d">
+         <ul class="clearFix">
+         	<li class="clearFix"><a href="javascript:;" class="fl">神谕者的成长礼</a><span class="fr">进行中</span></li>
+            <li class="clearFix"><a href="javascript:;" class="fl">神谕者的成长礼</a><span class="fr">进行中</span></li>
+            <li class="clearFix"><a href="javascript:;" class="fl">神谕者的成长礼</a><span class="fr">进行中</span></li>
+            <li class="clearFix"><a href="javascript:;" class="fl">神谕者的成长礼</a><span class="fr">进行中</span></li>
+            <li class="clearFix"><a href="javascript:;" class="fl">神谕者的成长礼</a><span class="fr">进行中</span></li>
+         	
+         </ul>
+         
+         </div>
+         
+         
+         
+         </div>
+        
+        </div>
+        <div class="bj">
+        	<div class="content_ba clearFix">
+        <div class="left fl">
+        	<div class="left_top clearFix">
+            	<h3><a href="javascript:;">快捷入口</a></h3>
+                <ul class="clearFix">
+                <li><a href="javascript:;">·账号安全</a></li>
+                <li><a href="javascript:;">·兑换中心</a></li>
+                <li><a href="javascript:;">·账号安全</a></li>
+                <li><a href="javascript:;">·畅游知道</a></li>
+                <li><a href="javascript:;">·BUG提交</a></li>
+                <li><a href="javascript:;">·客户端FAQ</a></li>
+                <li><a href="javascript:;">·玩家社区</a></li>
+                <li><a href="javascript:;">·加速器下载</a></li>	
+                
+                </ul>
+            </div>
+            <div class=" left_bottom">
+            	<a href="javascript:;"><img src="images/7.png" /></a>
+            </div>
+            <div class="xia">
+            <h3><a href="javascript:;">媒体合作专区</a></h3>
+            <div><a href="javascript:;"><img src="images/84.png" /> </a></div>
+            
+            
+            </div>
+        
+        </div>
+        <div class="center fl">
+        <div class="shang" id="shang">
+        <h3><i></i>玩家交流</h3>
+        <div class="center_btn clearFix">
+        <a href="javascript:;">玩家攻略</a>
+        <a href="javascript:;"class="active">论坛热帖</a>
+        <a href="javascript:;">社区精华</a>
+        <span class="no_a"><i></i><span>更多信息</span></span>
+        </div>
+       <ul class=" center_a clearFix  ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       <ul class=" center_a clearFix  ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       <ul class=" center_a clearFix show ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       </div>
+        <div class="xia" id="xia">
+        <h3><i></i>玩家交流</h3>
+        <div class="center_btn clearFix">
+        <a href="javascript:;">玩家攻略</a>
+        <a href="javascript:;"class="active">论坛热帖</a>
+        <a href="javascript:;">社区精华</a>
+        <span class="no_a"><i></i><span>更多信息</span></span>
+        </div>
+       <ul class=" center_a clearFix show ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       <ul class=" center_a clearFix  ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       <ul class=" center_a clearFix  ">
+       		<li class="fl"><img src="images/tua.png" alt="" /></li>
+            <li class="fl li4">
+            	<p> ·生活技能之烹饪技能详细解读</p>
+                <p>·称号：发现森林之秘 任务全程攻略</p>
+                <p> ·屌丝逆袭 大神成长计划开启</p>
+                <p> ·生活技能之烹饪技能详细解读</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·阻止科萨特复英雄【成活】就攻略！</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+                <p> ·灵魂回响生活技能玩法介绍(二)</p>
+            
+            </li>
+       
+       
+       
+       </ul>
+       </div>
+       
+        
+        
+       
+        
+        </div>
+        <div class="right fl">
+      <h3><i></i>游戏资料</h3>
+      <ul>
+      	<li><span>新手入门</span><a href="javascript:;">注册账号</a>丨<a href="javascript:;">下载游戏</a>丨<a href="javascript:;">登陆游戏</a></li>
+        <li><span>新手入门</span><a href="javascript:;">注册账号</a>丨<a href="javascript:;">下载游戏</a>丨<a href="javascript:;">登陆游戏</a></li>
+        <li><span>新手入门</span><a href="javascript:;">注册账号</a>丨<a href="javascript:;">下载游戏</a>丨<a href="javascript:;">登陆游戏</a></li>
+      	<li class="no_li"><span>新手入门</span><a href="javascript:;">注册账号</a>丨<a href="javascript:;">下载游戏</a>丨<a href="javascript:;">登陆游戏</a></li>
+        <li class="inptu"><a href="javascript:;">进入资料站</a></li>
+        
+      </ul>
+      <div class="xia clearFix" id="xia2">
+      <h3><i></i>视觉欣赏</h3>
+       <div class="center_btn clearFix">
+        <a href="javascript:;">游戏视频</a>
+        <a href="javascript:;"class="active">游戏截图</a>
+       
+        <span class=" no_a"><i></i><b>更多信息</b></span>
+        </div>
+       <ul class=" center_a clearFix show  ">
+       	  <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        
+       
+       
+       
+       </ul>
+        <ul class="center_a clearFix ">
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        
+        
+        
+        </ul>
+        
+        
+       
+       
+       
+    
+      
+      
+      
+      
+      </div>
+        
+        
+        </div>
+        
+        
+        </div>
+        <div class="footer">
+        <p class="footer_in">健康游戏公告</p>
+        <p class="wenzi">抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活</p>
+        <p class="wenzi2">本游戏适合18周岁以上的成年人用户，未满18周岁的未成年用户请在家长的监督下进行游戏。</p>
+        
+        
+        </div>
+        <div class="tiao2"></div>
+        <div class="jieshu">
+        <div class="jieshu_a"></div>
+      	</div>
+        
+        
+        </div>
+        
+        </div>
+        
+
+
+	</div>
+ 
+ 
+
+
+</div>
+
+
+</body>
+</html>

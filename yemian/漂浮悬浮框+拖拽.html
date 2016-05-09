@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div{ width:196px; height:196px; background:url(../img/21.jpg) -52px -41px;; position:absolute; left:0; top:0; border-radius:50%;}
+
+</style>
+<script>
+window.onload=function(){
+	var oDiv = document.getElementById('div');
+	
+	var timer = null;
+	var iSeedX = 0;
+	var iSeedY = 0;
+	var lastX = 0;
+	var lastY = 0;
+	oDiv.onmousedown=function(ev){
+		clearInterval(timer);
+		var oEvent = ev||event;
+		var disX = oEvent.clientX-oDiv.offsetLeft;
+		var disY = oEvent.clientY-oDiv.offsetTop;
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			oDiv.style.left = oEvent.clientX-disX+'px';
+			oDiv.style.top = oEvent.clientY-disY+'px';
+			iSeedX = oEvent.clientX-lastX;
+			iSeedY = oEvent.clientY-lastY;
+			
+			lastX = oEvent.clientX;
+			lastY = oEvent.clientY;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			move(oDiv);
+			
+			oDiv.releaseCapture&&oDiv.releaseCapture();
+		};
+		oDiv.setCapture&&oDiv.setCapture();
+		return false;
+	};
+	
+	function move(obj){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			iSeedY+=3;
+			var l = obj.offsetLeft+iSeedX;
+			var t = obj.offsetTop+iSeedY;
+			if(t>=document.documentElement.clientHeight-obj.offsetHeight){
+				t=document.documentElement.clientHeight-obj.offsetHeight;
+				iSeedX*=0.8;
+				iSeedY*=-0.8;
+			}
+			if(l>=document.documentElement.clientWidth-obj.offsetWidth){
+				l=document.documentElement.clientWidth-obj.offsetWidth;
+				iSeedY*=0.8;
+				iSeedX*=-0.8;
+			}
+			if(t<=0){
+				t=0;
+				iSeedX*=0.8;
+				iSeedY*=-0.8;
+			}
+			if(l<=0){
+				l=0;
+				iSeedY*=0.8;
+				iSeedX*=-0.8;
+			}
+			
+			if(Math.abs(iSeedX)<1)iSeedX = 0;
+			if(Math.abs(iSeedY)<1)iSeedY = 0;
+			
+			obj.style.left = l+'px';
+			obj.style.top = t+'px';
+			
+			if(iSeedX==0&&iSeedY==0&&t==document.documentElement.clientHeight-obj.offsetHeight){
+				clearInterval(timer);
+			}
+			
+		},30);
+	}
+	
+
+};
+</script>
+</head>
+
+<body style="background:url(../img/bj.jpg)">
+<div id="div"></div>
+</body>
+</html>

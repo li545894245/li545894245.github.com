@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0;}
+li,img{ list-style:none; width:150px; height:200px; float:left;}
+#box{ margin:50px auto; width:612px; height:200px; overflow:hidden; position:relative;}
+ul{height:200px; position:absolute;};
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oUl=oBox.children[0];
+	var aLi=oUl.children;
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+		setInterval(function(){
+			var l=oUl.offsetLeft-5;
+			
+			if(-l>=oUl.offsetWidth/2){
+			l=0;
+			}
+			oUl.style.left=l+'px';
+		},30);
+	
+};
+
+</script>
+</head>
+
+<body style="background:url(../img/bj.jpg)">
+<div id="box">
+	<ul>
+    	<li><img src="../yemian/1.jpg"></li>
+        <li><img src="../yemian/2.jpg"></li>
+        <li><img src="../yemian/3.jpg"></li>
+        <li><img src="../yemian/4.jpg"></li>
+    </ul>	
+</div>
+</body>
+</html>
