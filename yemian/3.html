@@ -2,42 +2,79 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>birthday to you！</title>
     <style>
     @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 html,
 body {
   font-family: 'Roboto Mono', monospace;
-  background: #212121;
-  height: 100%;
+    background-image: url(img3/IMG_1494.JPG);
+    -webkit-background-size: 100% 100%;
+    background-size:100% 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .container {
   height: 100%;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   display: flex;
+    margin: 0 auto;
+
 }
 .text {
-  font-weight: 100;
-  font-size: 28px;
-  color: #fafafa;
-}
-.dud {
-  color: #757575;
+  font-weight: 800;
+  font-size:4rem;
+  color: back;
+    font-family: 'Roboto Mono', monospace;
+    margin-top:158% ;
 }
 
-    
+    .icon-music-outer{
+
+        display: inline-block;
+
+        width: 25px;
+
+        height: 25px;
+
+        position: fixed;
+
+        right: 5px;
+
+        top: 10px;
+
+        font-size: 25px;
+
+        color: #ffda51;
+
+        z-index: 100;
+
+    }
     </style>
 </head>
 <body>
  <div class="container">
   <div class="text"></div>
-</div> 
-<script>
-    'use strict';
+</div>
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+ <i class="icon-music-outer">
+
+     <i class="forbid icon-music"></i> <!--控制音乐图标-->
+
+     <audio loop autoplay="autoplay" controls id="bgMusic" src="mp3/xinzuo.mp3">
+
+     </audio>
+
+ </i>
+<script>
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
 // ——————————————————————————————————————————————————
 // TextScramble
@@ -48,7 +85,7 @@ var TextScramble = function () {
     _classCallCheck(this, TextScramble);
 
     this.el = el;
-    this.chars = '!<>-_\\/[]{}dfaas—=+*^?#love________';
+    this.chars = '!<>-_\\/[]{}Happy birthday!=+*^?#love________';
     this.update = this.update.bind(this);
   }
 
@@ -67,6 +104,7 @@ var TextScramble = function () {
       var start = Math.floor(Math.random() * 40);
       var end = start + Math.floor(Math.random() * 40);
       this.queue.push({ from: from, to: to, start: start, end: end });
+
     }
     cancelAnimationFrame(this.frameRequest);
     this.frame = 0;
@@ -84,7 +122,6 @@ var TextScramble = function () {
       var start = _queue$i.start;
       var end = _queue$i.end;
       var char = _queue$i.char;
-
       if (this.frame >= end) {
         complete++;
         output += to;
@@ -118,7 +155,7 @@ var TextScramble = function () {
 // Example
 // ——————————————————————————————————————————————————
 
-var phrases = ['别太善良了，别太大方了，时间久了，你身边的人就会觉得，你所做的一切都是你应该的。','傻子哟', ' 即使有一天你撑不住了，哭了，累了，也没有人会心疼你，同情你;\'傻子哟', ' 因为在他们眼里，这都是你愿意做的。', '有时候！心眼也别太好了，不要什么事都为别人着想\' 因为，有的人不会想你的感受，你的难处，你的种种不易，甚至连一句温暖的话都没有！', '他们会觉得一切都是理所当然', '你也许不相信','------致傻了吧唧的自己','啥子哟','啥子哟','大傻子哟'];
+var phrases = ['一年一度','每一次的日子都是新的开始', ' 每一回的祝福都充满浓浓深情！', ' 亲爱的朋友，愿你怀里塞满礼物', '耳边充满祝福！', '今天，你是最灿烂的一个！'];
 
 var el = document.querySelector('.text');
 var fx = new TextScramble(el);
@@ -128,10 +165,65 @@ var next = function next() {
   fx.setText(phrases[counter]).then(function () {
     setTimeout(next, 4500);
   });
-  counter = (counter + 1) % phrases.length;
+  counter = (counter +1) % phrases.length;
 };
-
 next();
-</script>  
+
+</script>
+ <script src="../js/jquery-1.7.2.js"></script>
+
+ <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+ <script>
+
+     var $music = $('.icon-music-outer');
+
+     var $forbid = $music.find('.forbid');
+
+     var audio = document.getElementById('bgMusic');
+
+     function audioAutoPlay(audio) {
+
+         document.addEventListener("WeixinJSBridgeReady", function () {
+
+             audio.play();
+
+         }, false);
+
+         document.addEventListener('YixinJSBridgeReady', function () {
+
+             audio.play();
+
+         }, false);
+
+     }
+
+     audioAutoPlay(audio);
+
+     $music.on('click', function () {
+
+         if ($forbid.hasClass('icon-music')) {
+
+             $forbid.removeClass('icon-music').addClass('icon-forbidMusic');
+
+         } else {
+
+             $forbid.removeClass('icon-forbidMusic').addClass('icon-music');
+
+         }
+
+         if (audio.paused) {
+
+             audio.play();
+
+             return
+
+         }
+
+         audio.pause();
+
+     });
+
+ </script>
 </body>
 </html>
