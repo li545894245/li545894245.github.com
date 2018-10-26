@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<title>happ</title>
+<script>
+	(function () {
+		var html = document.documentElement;
+		var width = html.getBoundingClientRect().width;
+		var fs = width/16;
+		html.style.fontSize = fs+"px";
+	})()
+</script>
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>	
+<script src="js/swiper.js"></script>
+<div class="swiper-container">
+	<!--<div class="boxCover"></div>-->
+	
+	<div class="swiper-wrapper">
+		<!--<div class="swiper-slide first swiper-no-swiping">-->
+		<div class="swiper-slide first">
+			
+			<div class="fence">
+				<div class="timeBox">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="gears">
+				<img class="gear1" src="img/gear1.png"/>
+				<img class="gear2" src="img/gear2.png"/>
+				<img class="gear3" src="img/gear3.png"/>
+				<img class="gear4" src="img/gear4.png"/>
+				<img class="gear5" src="img/gear5.png"/>
+				<img class="gear6" src="img/gear6.png"/>
+				<img class="gear7" src="img/gear7.png"/>
+				<img class="gear8" src="img/gear8.png"/>
+			</div>
+			<div class="pawsbox">
+				<div class="paw">
+					<div class="pawLeft paws"></div>
+					<div class="pawRight paws"></div>
+				</div>
+				<div class="M">
+					<div class="leftchain chain"></div>
+					<div class="rightchain chain"></div>
+				</div>
+			</div>
+			<img src="img/first_people.png" class="firstPeople"/>
+			<img src="img/first_people2.png" class="firstPeople2"/>
+			<div class="next"></div>
+		</div>
+
+	</div>
+
+</div>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+
+</html>
