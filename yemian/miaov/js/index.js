@@ -2,7 +2,7 @@
 var swiperWrapper = document.querySelector(".swiper-wrapper");
 var swiperSlide = document.querySelectorAll(".swiper-slide");
 var picArr = [
-	"img/bg1.png","img/2017_0.png","img/2017_1.png","img/2017_2.png","img/2017_7.png","img/chainLeft.png","img/chainRight.png","img/fence.png","img/first_circle.png","img/gear1.png","img/gear2.png","img/gear3.png","img/gear4.png","img/gear5.png","img/gear6.png","img/gear7.png","img/gear8.png","img/line1.png","img/line10.png","img/line11.png","img/line12.png","img/line13.png","img/line14.png","img/line2.png","img/line3.png","img/line4.png","img/line5.png","img/line6.png","img/line7.png","img/line8.png","img/line9.png","img/M.png","img/next.png","img/paw.png","img/pawLeft.png","img/pawRight.png","img/first_people.png","img/first_people2.png"
+	"img/bg1.png","img/2017_0.png","img/2017_1.png","img/2017_2.png","img/2017_7.png","img/chainLeft.png","img/chainRight.png","img/fence.png","img/first_circle.png","img/gear1.png","img/gear2.png","img/gear3.png","img/gear4.png","img/gear5.png","img/gear6.png","img/gear7.png","img/gear8.png","img/M.png","img/paw.png","img/pawLeft.png","img/pawRight.png","img/first_people.png","img/first_people2.png"
 ]
 var img =  new Image();
 var sum = picArr.length;
