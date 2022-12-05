@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>嘉心birthday to you！</title>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+    html,
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background: black;
+      -webkit-background-size: 100% 100%;
+      background-size:100% 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .container {
+      height: 100%;
+      width: 80%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin: 0 auto;
+
+    }
+    .text {
+      font-weight: 800;
+      font-size:4rem;
+      color: azure;
+      font-family: 'Roboto Mono', monospace;
+      margin-top:158% ;
+    }
+
+    .icon-music-outer{
+
+      display: inline-block;
+
+      width: 25px;
+
+      height: 25px;
+
+      position: fixed;
+
+      right: 5px;
+
+      top: 10px;
+
+      font-size: 25px;
+
+      color: #ffda51;
+
+      z-index: 100;
+
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="text"></div>
+</div>
+
+<i class="icon-music-outer">
+
+  <i class="forbid icon-music"></i> <!--控制音乐图标-->
+
+  <audio loop autoplay="autoplay" controls id="bgMusic" src="mp3/4.mp3">
+
+  </audio>
+
+</i>
+<script>
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  // ——————————————————————————————————————————————————
+  // TextScramble
+  // ——————————————————————————————————————————————————
+
+  var TextScramble = function () {
+    function TextScramble(el) {
+      _classCallCheck(this, TextScramble);
+
+      this.el = el;
+      this.chars = '!<>-_\\/[]{}Happy birthday!=+*^?#love________';
+      this.update = this.update.bind(this);
+    }
+
+    TextScramble.prototype.setText = function setText(newText) {
+      var _this = this;
+
+      var oldText = this.el.innerText;
+      var length = Math.max(oldText.length, newText.length);
+      var promise = new Promise(function (resolve) {
+        return _this.resolve = resolve;
+      });
+      this.queue = [];
+      for (var i = 0; i < length; i++) {
+        var from = oldText[i] || '';
+        var to = newText[i] || '';
+        var start = Math.floor(Math.random() * 40);
+        var end = start + Math.floor(Math.random() * 40);
+        this.queue.push({ from: from, to: to, start: start, end: end });
+
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    };
+
+    TextScramble.prototype.update = function update() {
+      var output = '';
+      var complete = 0;
+      for (var i = 0, n = this.queue.length; i < n; i++) {
+        var _queue$i = this.queue[i];
+        var from = _queue$i.from;
+        var to = _queue$i.to;
+        var start = _queue$i.start;
+        var end = _queue$i.end;
+        var char = _queue$i.char;
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
+          }
+          output += '<span class="dud">' + char + '</span>';
+        } else {
+          output += from;
+        }
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    };
+
+    TextScramble.prototype.randomChar = function randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    };
+
+    return TextScramble;
+  }();
+
+  // ——————————————————————————————————————————————————
+  // Example
+  // ——————————————————————————————————————————————————
+
+  var phrases = ['今天你生日我送你祝福~！：','生日快乐腻~快乐每一天~~~！！！', ' 啵啵啵', ' 亲爱的宝贝，愿你怀里塞满礼物', '耳边充满祝福！', '今天，你是最灿烂的一个！'];
+
+  var el = document.querySelector('.text');
+  var fx = new TextScramble(el);
+
+  var counter = 0;
+  var next = function next() {
+    fx.setText(phrases[counter]).then(function () {
+      setTimeout(next, 4500);
+    });
+    counter = (counter +1) % phrases.length;
+  };
+  next();
+
+</script>
+<script src="../js/jquery-1.7.2.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script>
+
+  var $music = $('.icon-music-outer');
+
+  var $forbid = $music.find('.forbid');
+
+  var audio = document.getElementById('bgMusic');
+
+  function audioAutoPlay(audio) {
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+
+      audio.play();
+
+    }, false);
+
+    document.addEventListener('YixinJSBridgeReady', function () {
+
+      audio.play();
+
+    }, false);
+
+  }
+
+  audioAutoPlay(audio);
+
+  $music.on('click', function () {
+
+    if ($forbid.hasClass('icon-music')) {
+
+      $forbid.removeClass('icon-music').addClass('icon-forbidMusic');
+
+    } else {
+
+      $forbid.removeClass('icon-forbidMusic').addClass('icon-music');
+
+    }
+
+    if (audio.paused) {
+
+      audio.play();
+
+      return
+
+    }
+
+    audio.pause();
+
+  });
+
+</script>
+</body>
+</html>
